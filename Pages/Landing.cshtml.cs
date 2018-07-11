@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace DemiplaneTemplate.Pages
 {
-    public class IndexModel : PageModel
+    public class LandingModel : PageModel
     {
         public void OnGet()
         {
