@@ -9,6 +9,14 @@ namespace DemiplaneTemplate.Rollers
     {
         private readonly IArbitraryDieRoller roller;
 
+        public String Name
+        {
+            get
+            {
+                return this.roller.Name;
+            }
+        }
+
         public ArbitraryDieAdapter(IArbitraryDieRoller roller)
         {
             this.roller = roller;

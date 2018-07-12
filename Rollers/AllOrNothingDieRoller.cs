@@ -9,6 +9,14 @@ namespace DemiplaneTemplate.Rollers
     {
         private readonly Random random = new Random();
 
+        public String Name
+        {
+            get
+            {
+                return "All Or Nothing";
+            }
+        }
+
         public int RollDx(int x)
         {
             if (random.Next(0,2) == 1)

@@ -5,10 +5,7 @@ using System.Threading.Tasks;
 
 namespace DemiplaneTemplate.Rollers
 {
-    public interface IArbitraryDieRoller
+    public static class RollerExtentions
     {
-        String Name { get; }
-
-        int RollDx(int x);
     }
 }
