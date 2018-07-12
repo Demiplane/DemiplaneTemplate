@@ -10,12 +10,13 @@ namespace DemiplaneTemplate.Controllers
 {
     public class RollerController : Controller
     {
-        //private readonly IEnumerable<IDieRoller> rollers;
+        private readonly IEnumerable<IDieRoller> rollers;
 
-        //public RollerController(IEnumerable<IDieRoller> rollers)
-        //{
-        //    this.rollers = rollers;
-        //}
+        public RollerController()
+        {
+            // HACK
+            this.rollers = new List<IDieRoller>() { new ArbitraryDieAdapter(new RandomDieRoller()), new ArbitraryDieAdapter(new AllOrNothingDieRoller()) };
+        }
 
         public IActionResult Index()
         {
