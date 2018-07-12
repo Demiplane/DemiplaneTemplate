@@ -13,6 +13,7 @@ using SimpleInjector.Integration.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.ViewComponents;
 using Microsoft.AspNetCore.Http;
+using DemiplaneTemplate.Rollers;
 
 namespace DemiplaneTemplate
 {
@@ -30,10 +31,7 @@ namespace DemiplaneTemplate
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().AddRazorPagesOptions(options =>
-            {
-                options.Conventions.AddPageRoute("/Landing", "");
-            });
+            services.AddMvc();
 
             IntegrateSimpleInjector(services);
         }
@@ -70,7 +68,12 @@ namespace DemiplaneTemplate
 
             app.UseStaticFiles();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Roller}/{action=Index}");
+            });
         }
 
         private void InitializeContiner(IApplicationBuilder app)
@@ -81,7 +84,7 @@ namespace DemiplaneTemplate
 
             // Add application services. For instance:
             //container.Register<IUserService, UserService>(Lifestyle.Scoped);
-            //container.Register
+            //container.RegisterCollection<IDieRoller>();
 
             // Allow Simple Injector to resolve services from ASP.NET Core.
             container.AutoCrossWireAspNetComponents(app);
