@@ -81,6 +81,7 @@ namespace DemiplaneTemplate
 
             // Add application services. For instance:
             //container.Register<IUserService, UserService>(Lifestyle.Scoped);
+            //container.Register
 
             // Allow Simple Injector to resolve services from ASP.NET Core.
             container.AutoCrossWireAspNetComponents(app);
