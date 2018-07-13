@@ -1,13 +1,12 @@
 ﻿// Write your Javascript code.
 
-
 $(document).ready(function () {
-    $(".btn-group > .btn").click(function () {
-        $(this).addClass("active").siblings().removeClass("active");
+    $(".dropdown-item").click(function (event) {
+        $("#dropdownMenuButton").text(event.target.textContent);
     });
 
     $('#roll-d4-button').click(function () {
-        let rollerName = $('#roller-button-group').text();
+        let rollerName = $('#dropdownMenuButton').text();
         $.ajax({
             url: '/Roller/RollD4',
             data: {
@@ -19,10 +18,11 @@ $(document).ready(function () {
     });
 
     $('#roll-d6-button').click(function () {
+        let rollerName = $('#dropdownMenuButton').text();
         $.ajax({
             url: '/Roller/RollD6',
             data: {
-                RollerName: 'Standard'
+                RollerName: rollerName
             }
         }).done(function (result) {
             $('#d6-result').text(result);
@@ -30,10 +30,11 @@ $(document).ready(function () {
     });
 
     $('#roll-d8-button').click(function () {
+        let rollerName = $('#dropdownMenuButton').text();
         $.ajax({
             url: '/Roller/RollD8',
             data: {
-                RollerName: 'Standard'
+                RollerName: rollerName
             }
         }).done(function (result) {
             $('#d8-result').text(result);
@@ -41,10 +42,11 @@ $(document).ready(function () {
     });
 
     $('#roll-d10-button').click(function () {
+        let rollerName = $('#dropdownMenuButton').text();
         $.ajax({
             url: '/Roller/RollD10',
             data: {
-                RollerName: 'Standard'
+                RollerName: rollerName
             }
         }).done(function (result) {
             $('#d10-result').text(result);
@@ -52,10 +54,11 @@ $(document).ready(function () {
     });
 
     $('#roll-d12-button').click(function () {
+        let rollerName = $('#dropdownMenuButton').text();
         $.ajax({
             url: '/Roller/RollD12',
             data: {
-                RollerName: 'Standard'
+                RollerName: rollerName
             }
         }).done(function (result) {
             $('#d12-result').text(result);
@@ -63,7 +66,7 @@ $(document).ready(function () {
     });
 
     $('#roll-d20-button').click(function () {
-        let rollerName = $('dropdown-item active').text() || 'Standard';
+        let rollerName = $('#dropdownMenuButton').text();
         $.ajax({
             url: '/Roller/RollD20',
             data: {
@@ -76,10 +79,11 @@ $(document).ready(function () {
 
 
     $('#roll-d100-button').click(function () {
+        let rollerName = $('#dropdownMenuButton').text();
         $.ajax({
             url: '/Roller/RollD100',
             data: {
-                RollerName: 'Standard'
+                RollerName: rollerName
             }
         }).done(function (result) {
             $('#d100-result').text(result);

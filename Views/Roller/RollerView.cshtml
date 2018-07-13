@@ -8,78 +8,43 @@
 <div class="contianer">
     <div class="row">
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown button
-            </button>
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Standard</button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
+                @foreach (var roller in Model.RollerNames)
+                {
+                    <button class="dropdown-item">@roller</button>
+                }
             </div>
         </div>
-
-        @*<div class="dropdown">
-            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                @for (int i = 0; i < Model.RollerNames.Count(); i++)
-                {
-                var roller = Model.RollerNames[i];
-                if (i == 0)
-                {
-                <a class="dropdown-item active" href="#">@roller</a>
-                }
-                else
-                {
-                <a class="dropdown-item" href="#">@roller</a>
-                }
-                }
-            </div>*@
-        @*</div>*@
-
-        @*<div id="roller-button-group" class="btn-group" role="group" aria-label="Rollers">
-            @for (int i = 0; i < Model.RollerNames.Count(); i++)
-            {
-            var roller = Model.RollerNames[i];
-            if (i == 0)
-            {
-            <button type="button" class="btn btn-secondary" autofocus="autofocus">@roller</button>
-            }
-            else
-            {
-            <button type="button" class="btn btn-secondary">@roller</button>
-            }
-            }
-        </div>*@
     </div>
-    <div class="row">
+
+    <div class="row my-2">
         <button type="button" class="btn btn-primary" id="roll-d4-button">Roll D4</button>
-        <label id="d4-result"></label>
+        <h3 class="mx-2" id="d4-result"></h3>
     </div>
-    <div class="row">
+    <div class="row my-2">
         <button type="button" class="btn btn-primary" id="roll-d6-button">Roll D6</button>
-        <label id="d6-result"></label>
+        <h3 class="mx-2" id="d6-result"></h3>
     </div>
-    <div class="row">
+    <div class="row my-2">
         <button type="button" class="btn btn-primary" id="roll-d8-button">Roll D8</button>
-        <label id="d8-result"></label>
+        <h3 class="mx-2" id="d8-result"></h3>
     </div>
-    <div class="row">
+    <div class="row my-2">
         <button type="button" class="btn btn-primary" id="roll-d10-button">Roll D10</button>
-        <label id="d10-result"></label>
+        <h3 class="mx-2" id="d10-result"></h3>
     </div>
-    <div class="row">
+    <div class="row my-2">
         <button type="button" class="btn btn-primary" id="roll-d12-button">Roll D12</button>
-        <label id="d12-result"></label>
+        <h3 class="mx-2" id="d12-result"></h3>
     </div>
-    <div class="row">
+    <div class="row my-2">
         <button type="button" class="btn btn-primary" id="roll-d20-button">Roll D20</button>
-        <label id="d20-result"></label>
+        <h3 class="mx-2" id="d20-result"></h3>
     </div>
-    <div class="row">
+    <div class="row my-2">
         <button type="button" class="btn btn-primary" id="roll-d100-button">Roll D100</button>
-        <label id="d100-result"></label>
+        <h3 class="mx-2" id="d100-result"></h3>
     </div>
 </div>
 
