@@ -14,7 +14,7 @@ namespace DemiplaneTemplate.Controllers
 
         public RollerController()
         {
-            rollers = new List<IDieRoller>() { new ArbitraryDieAdapter(new RandomDieRoller()), new ArbitraryDieAdapter(new AllOrNothingDieRoller()) };
+            rollers = new List<IDieRoller>() { new ArbitraryDieAdapter(new RandomDieRoller()), new ArbitraryDieAdapter(new AllOrNothingDieRoller()), new ArbitraryDieAdapter(new DMDieRoller()) };
         }
 
         public IActionResult Index()
