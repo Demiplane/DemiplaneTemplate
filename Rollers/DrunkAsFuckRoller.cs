@@ -19,8 +19,8 @@ namespace DemiplaneTemplate.Rollers
 
         public int RollDx(int x)
         {
-            var upperBound = (int) (x / .75);
-            var lowerBound = (int) (x / .25);
+            var upperBound = (int) (x * .75);
+            var lowerBound = (int) (x * .30);
 
             var roll = 0;
 
