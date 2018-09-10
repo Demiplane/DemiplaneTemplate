@@ -14,9 +14,21 @@ namespace DemiplaneTemplate.Controllers
 
         public RollerController()
         {
-            rollers = new List<IDieRoller>() { new ArbitraryDieAdapter(new RandomDieRoller()), new ArbitraryDieAdapter(new AllOrNothingDieRoller()), new ArbitraryDieAdapter(new DMDieRoller()), new ArbitraryDieAdapter(new NiceDMDieRoller()), new ArbitraryDieAdapter(new DrunkAsFuckRoller()) };
+            rollers = new List<IDieRoller>() { new ArbitraryDieAdapter(new RandomDieRoller()), new ArbitraryDieAdapter(new AllOrNothingDieRoller()), new ArbitraryDieAdapter(new DMDieRoller()), new ArbitraryDieAdapter(new NiceDMDieRoller()), new ArbitraryDieAdapter(new DrunkAsFuckRoller()), new ArbitraryDieAdapter(new KokoRoller())};
         }
 
+        [HttpGet("/Koko")]
+        public IActionResult Koko()
+        {
+            var rollerViewModel = new RollerViewModel
+            {
+                RollerNames = rollers.Select(r => r.Name).Reverse().ToList()
+            };
+
+            return View("RollerView", rollerViewModel);
+        }
+
+        [HttpGet("/")]
         public IActionResult Index()
         {
             var rollerViewModel = new RollerViewModel
