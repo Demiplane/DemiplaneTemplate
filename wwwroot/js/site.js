@@ -130,6 +130,6 @@ var fadingObject = {
             document.getElementById(this.id).style.backgroundColor =
                 this.yellowColor(this.count);
             setTimeout(this.countDown.bind(this), 25);
-        }
+        };
     }
 };
